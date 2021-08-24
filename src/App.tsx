@@ -1,7 +1,11 @@
 import React from "react";
 import logo from "./logo.svg";
+import { Button, DatePicker } from "antd";
 import "./App.css";
-
+import { Moment } from "moment";
+function onChange(date: Moment | null, dateString: string) {
+  console.log(date, dateString);
+}
 function App() {
   return (
     <div className="App">
@@ -18,6 +22,10 @@ function App() {
         >
           Learn React
         </a>
+        <br />
+        <Button type="primary">antd</Button>
+        <br />
+        <DatePicker onChange={onChange} />
       </header>
     </div>
   );
