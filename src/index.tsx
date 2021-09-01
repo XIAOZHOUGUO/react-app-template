@@ -1,18 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "@/App";
 import reportWebVitals from "./reportWebVitals";
 import { ConfigProvider } from "antd";
 import zhCN from "antd/lib/locale/zh_CN";
 import dayJs from "dayjs";
 import dayjsZhCN from "dayjs/locale/zh-cn";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import App from "src/App";
+import "./index.css";
+
 dayJs.locale(dayjsZhCN);
+
 ReactDOM.render(
   <React.StrictMode>
-    <ConfigProvider locale={zhCN}>
-      <App />
-    </ConfigProvider>
+    <Provider store={store}>
+      <ConfigProvider locale={zhCN}>
+        <App />
+      </ConfigProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

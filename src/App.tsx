@@ -1,12 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
-import { Button, DatePicker } from "antd";
-import "./App.css";
+import { Button, DatePicker, Typography } from "antd";
 import { Moment } from "moment";
+import { useAppDispatch, useAppSelector } from "src/hooks/useReactToolkit";
+import { setAppToken } from "./store/slices/system.slice";
+import styled from "@emotion/styled";
+import logo from "./logo.svg";
+import "./App.css";
 function onChange(date: Moment | null, dateString: string) {
   console.log(date, dateString);
 }
 function App() {
+  const dispatch = useAppDispatch();
+  const token = useAppSelector(state => state.system.token);
   return (
     <div className="App">
       <header className="App-header">
@@ -23,12 +28,23 @@ function App() {
           Learn React
         </a>
         <br />
-        <Button type="primary">antd</Button>
+        <Button
+          onClick={() => dispatch(setAppToken("fake token"))}
+          type="primary"
+        >
+          antd
+        </Button>
+        <TestContainer type="success">{token || "暂无token..."}</TestContainer>
         <br />
         <DatePicker onChange={onChange} />
       </header>
     </div>
   );
 }
+const TestContainer = styled(Typography.Text)`
+  width: 100%;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+`;
 
 export default App;

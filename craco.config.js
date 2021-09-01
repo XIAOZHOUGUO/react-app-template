@@ -1,12 +1,12 @@
 /** craco-config.js： https://www.npmjs.com/package/@craco/craco#installation */
 const AntdDayjsWebpackPlugin = require("antd-dayjs-webpack-plugin");
-const path = require("path");
-const pathResolve = pathUrl => path.join(__dirname, pathUrl);
+// const path = require("path");
+// const pathResolve = pathUrl => path.join(__dirname, pathUrl);
 module.exports = {
   webpack: {
-    alias: {
-      "@": pathResolve("src"),
-    },
+    // alias: {
+    //   "@": pathResolve("src"),
+    // },
     plugins: [new AntdDayjsWebpackPlugin()],
     configure: (webpackConfig, { env, paths }) => {
       return webpackConfig;
