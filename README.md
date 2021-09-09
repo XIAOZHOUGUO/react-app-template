@@ -45,6 +45,14 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### commitlint
+## UI framework
+
+use Ant Design, learn more in the [Ant Design documentation](https://ant.design/docs/react/introduce-cn)
+
+## Commitlint
 
 in Windows, before use `git cz` you should: `npm install commitizen -g`
+
+## Data Mock
+
+use `Apite`, before use it please check out the [apite documentation](https://github.com/wangxing218/apite) and `Mock` grammar, [examples](http://mockjs.com/examples.html)
